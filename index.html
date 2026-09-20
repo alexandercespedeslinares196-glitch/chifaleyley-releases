@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descargar · Sistema Restaurante Chifa LeyLey</title>
+<meta name="description" content="Descarga del Sistema Restaurante Chifa LeyLey para Windows.">
+<!--
+  Página pública de descarga. Se publica en GitHub Pages desde el repositorio de releases.
+
+  Los datos salen del mismo manifiesto firmado que consultan las aplicaciones instaladas, así
+  que esta página nunca puede ofrecer una versión distinta de la publicada. Si no se puede leer,
+  se muestra el enlace a la lista de versiones en lugar de un botón que no funcionaría.
+
+  Todo el texto se inserta con textContent, nunca como HTML.
+-->
+<style>
+  :root {
+    --caoba: #461616; --caoba-claro: #6b2626; --ambar: #f9a62a; --naranja: #f58351;
+    --fondo: #faf7f4; --superficie: #ffffff; --borde: #e7ddd5;
+    --texto: #2b1a1a; --suave: #7c6a63;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fondo: #1a0f0f; --superficie: #241717; --borde: #3a2626;
+      --texto: #f2e9e4; --suave: #b9a49b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--fondo); color: var(--texto);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  header {
+    background: var(--caoba); color: #fff; padding: 28px 16px;
+    display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;
+  }
+  header img { width: 96px; height: auto; }
+  header h1 { margin: 0; font-size: 21px; letter-spacing: .3px; }
+  header p { margin: 0; color: #e9d7cd; font-size: 14px; }
+  main { max-width: 680px; margin: 0 auto; padding: 24px 16px 56px; }
+  .tarjeta {
+    background: var(--superficie); border: 1px solid var(--borde);
+    border-radius: 14px; padding: 24px; margin-bottom: 20px;
+  }
+  .principal { text-align: center; }
+  .version { font-size: 28px; font-weight: 800; margin: 0 0 4px; color: var(--caoba); }
+  @media (prefers-color-scheme: dark) { .version { color: var(--ambar); } }
+  .detalle { color: var(--suave); font-size: 14px; margin: 0 0 20px; }
+  a.descargar {
+    display: inline-block; background: var(--ambar); color: #3a1c00; text-decoration: none;
+    font-size: 18px; font-weight: 800; padding: 15px 34px; border-radius: 12px;
+    box-shadow: 0 3px 0 #c9821c; transition: transform .06s;
+  }
+  a.descargar:hover { background: var(--naranja); box-shadow: 0 3px 0 #c4633a; color: #fff; }
+  a.descargar:active { transform: translateY(2px); box-shadow: none; }
+  a.descargar.oculto, .oculto { display: none; }
+  h2 { font-size: 16px; margin: 0 0 10px; color: var(--caoba); }
+  @media (prefers-color-scheme: dark) { h2 { color: var(--ambar); } }
+  ol, ul { margin: 0; padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  .nota {
+    border-left: 4px solid var(--naranja); background: color-mix(in srgb, var(--naranja) 9%, transparent);
+    padding: 12px 14px; border-radius: 0 8px 8px 0; font-size: 15px;
+  }
+  .huella {
+    font-family: ui-monospace, Consolas, monospace; font-size: 11px; color: var(--suave);
+    word-break: break-all; margin-top: 18px; line-height: 1.5;
+  }
+  footer { text-align: center; color: var(--suave); font-size: 13px; padding: 0 16px 32px; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Chifa Ley Ley">
+  <h1>Sistema Restaurante</h1>
+  <p>Salón, comandas de cocina, caja y facturación electrónica</p>
+</header>
+
+<main>
+  <section class="tarjeta principal">
+    <p class="version" id="version">Buscando la última versión…</p>
+    <p class="detalle" id="detalle">&nbsp;</p>
+
+    <a class="descargar oculto" id="descargar" rel="noopener">Descargar para Windows</a>
+
+    <p class="detalle oculto" id="fallo">
+      No se pudo consultar la última versión.
+      <a id="enlace-lista" href="#">Ver todas las versiones</a>
+    </p>
+
+    <p class="huella oculto" id="huella"></p>
+  </section>
+
+  <section class="tarjeta">
+    <h2>Cómo instalarlo</h2>
+    <ol>
+      <li>Descargue el archivo y ábralo con doble clic.</li>
+      <li>Windows puede avisar de que no reconoce el programa. Pulse
+          <b>Más información</b> y luego <b>Ejecutar de todas formas</b>.</li>
+      <li>Siga el instalador. Al terminar, el sistema se abre solo.</li>
+    </ol>
+    <p class="nota">
+      La primera vez el sistema muestra un <b>código de instalación</b>. Envíeselo a su proveedor
+      para que active la licencia de este equipo.
+    </p>
+  </section>
+
+  <section class="tarjeta">
+    <h2>Después de instalar</h2>
+    <ul>
+      <li><b>No hay que volver a esta página.</b> Las versiones nuevas se descargan solas y se
+          instalan al cerrar el sistema.</li>
+      <li>El sistema arranca vacío: usted carga sus mesas, su carta y sus usuarios.</li>
+      <li>Sus ventas se guardan en la computadora del local y no se pierden al actualizar.</li>
+    </ul>
+    <p class="nota">Requiere Windows 10 u 11 de 64 bits. No hace falta instalar nada más.</p>
+  </section>
+</main>
+
+<footer>
+  <p id="pie">&nbsp;</p>
+</footer>
+
+<script>
+"use strict";
+
+var REPO = "alexandercespedeslinares196-glitch/chifaleyley-releases";
+var MANIFIESTO = "https://ojuyeaqunieekaebmefe.supabase.co/storage/v1/object/public/actualizaciones/ultima.json";
+
+function $(id) { return document.getElementById(id); }
+
+function mostrarFallo() {
+  $("version").textContent = "Sistema Restaurante";
+  $("detalle").textContent = "";
+  $("fallo").classList.remove("oculto");
+  $("enlace-lista").href = "https://github.com/" + REPO + "/releases/latest";
+}
+
+/** El manifiesto es base64url(datos).base64url(firma); aquí sólo se leen los datos. */
+function leerCarga(token) {
+  var base64 = token.split(".")[0].replace(/-/g, "+").replace(/_/g, "/");
+  while (base64.length % 4) { base64 += "="; }
+  var binario = atob(base64);
+  var bytes = new Uint8Array(binario.length);
+  for (var i = 0; i < binario.length; i++) { bytes[i] = binario.charCodeAt(i); }
+  return JSON.parse(new TextDecoder("utf-8").decode(bytes));
+}
+
+function enMegas(bytes) { return (bytes / 1048576).toFixed(0) + " MB"; }
+
+function enFecha(iso) {
+  var f = new Date(iso);
+  if (isNaN(f)) { return ""; }
+  return f.toLocaleDateString("es-PE", { day: "numeric", month: "long", year: "numeric" });
+}
+
+fetch(MANIFIESTO, { cache: "no-store" })
+  .then(function (r) {
+    if (!r.ok) { throw new Error("HTTP " + r.status); }
+    return r.json();
+  })
+  .then(function (envoltorio) {
+    var m = leerCarga(envoltorio.manifiesto);
+
+    // Sólo se enlaza una descarga por https: si el manifiesto trajera otra cosa, se prefiere
+    // no ofrecer ningún botón antes que mandar al cliente a cualquier sitio.
+    if (typeof m.url !== "string" || m.url.indexOf("https://") !== 0) {
+      throw new Error("dirección de descarga no válida");
+    }
+
+    $("version").textContent = "Versión " + m.version;
+
+    var partes = [];
+    if (m.tamano) { partes.push(enMegas(m.tamano)); }
+    var fecha = m.publicadoEn ? enFecha(m.publicadoEn) : "";
+    if (fecha) { partes.push("publicada el " + fecha); }
+    $("detalle").textContent = partes.join(" · ");
+
+    var boton = $("descargar");
+    boton.href = m.url;
+    boton.setAttribute("download", m.archivo || "");
+    boton.classList.remove("oculto");
+
+    if (m.sha256) {
+      $("huella").textContent = "SHA-256: " + m.sha256;
+      $("huella").classList.remove("oculto");
+    }
+
+    if (m.notas) { $("pie").textContent = "Novedades de esta versión: " + m.notas; }
+  })
+  .catch(function () { mostrarFallo(); });
+</script>
+
+</body>
+</html>
